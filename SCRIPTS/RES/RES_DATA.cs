@@ -6,11 +6,9 @@ using System.IO;
 public class RES_DATA : MonoBehaviour
 {
     //-----------------------------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------------------------
     // всего денег
-    protected static int SCORE_MONEY;
+    protected static int score_money;
     //-----------------------------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------------------------
 
 
 
@@ -18,30 +16,29 @@ public class RES_DATA : MonoBehaviour
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------------------------
-    // УЖЕ ДОБЫВАЕМЫЕ РЕСУРСЫ
-    protected static Dictionary<string, STRCT_RES_TYP> RES = new Dictionary<string, STRCT_RES_TYP>()
+    // ДОБЫВАЕМЫЕ РЕСУРСЫ
+    protected static Dictionary<string, CLS_resource> resources = new Dictionary<string, CLS_resource>()
     {
-        {"BLACK", new STRCT_RES_TYP("BLACK", 0, 1.0f, 1) },
-        {"GLASS", new STRCT_RES_TYP("GLASS", 0, 1.8f, 1) },
-        {"GREEN", new STRCT_RES_TYP("GREEN", 0, 2.5f, 1) },
+        {"BLACK", new CLS_resource("BLACK", 0, 1.0f, 1) },
+        {"GLASS", new CLS_resource("GLASS", 0, 1.8f, 1) },
+        {"GREEN", new CLS_resource("GREEN", 0, 2.5f, 1) },
+        {"TREE",  new CLS_resource("TREE",  0, 1.4f, 1) },
     };
 
-    public class STRCT_RES_TYP
+    public class CLS_resource
     {
-        public int          SCORE;          // всего ресурсов
-        public float        TS_GET;         // время следующего получения
-        public float        TS_Interval;    // интервал между получениями
-        public int          GET_V;          // скольуо получаем
+        public int          score;                  // всего ресурсов
+        public float        time_get;               // время следующего получения
+        public float        time_interval;          // интервал между получениями
+        public int          value_get_resources;    // скольуо получаем
 
-        public STRCT_RES_TYP(string NAME, int _SCORE, float _TS_Interval, int _GET_V)
+        public CLS_resource(string NAME, int _score, float _time_interval, int _value_get_resources)
         {
-            SCORE           = _SCORE;
-            TS_GET          = 0;
-            TS_Interval     = _TS_Interval;
-            GET_V           = _GET_V;
+            score               = _score;
+            time_get            = 0;
+            time_interval       = _time_interval;
+            value_get_resources = _value_get_resources;
         }
     }
-    //-----------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------
 }

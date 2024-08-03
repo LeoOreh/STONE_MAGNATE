@@ -1,18 +1,28 @@
 using UnityEngine;
 
-public class GL : MonoBehaviour
+public class BUTTON_MAP : BUTTONS
 {
     //-----------------------------------------------------------------------------------------------------------------
-    // тип добываемого ресурса
-    public static string            name_mining_scene;      // black, glass, green, yellow, red, combo_red_yellow
-    public static string[]          typs_mining_resource;   // black, glass, green, yellow, red
+    public void MAP_Close()
+    {
+        map.SetActive(false);
+    }
     //-----------------------------------------------------------------------------------------------------------------
 
 
 
 
-
     //-----------------------------------------------------------------------------------------------------------------
-    public static float             time;
+    public void RES_Open(Transform TR)
+    {
+        GL.name_mining_scene = TR.name;
+
+
+        SCENE_MINING.SET();
+
+        UI_RESOURCE.UpdateUIValues();
+
+        MAP_Close();
+    }
     //-----------------------------------------------------------------------------------------------------------------
 }
