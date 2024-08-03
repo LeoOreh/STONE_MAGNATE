@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class TIMER_GET_RESOURCE : RES_DATA
+public class RESOURCE_TIMER_GET : RESOURCE
 {
     //-----------------------------------------------------------------------------------------------------------------
     // опнбепйю рюилепнб онксвемхъ пеяспянб

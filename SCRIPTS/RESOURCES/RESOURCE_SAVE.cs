@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
-public class SAVE_RESOURCE : RES_DATA
+public class RESOURCE_SAVE : RESOURCE
 {
     //-----------------------------------------------------------------------------------------------------------------
     static string path = Application.persistentDataPath + "/sv_res.ololo";

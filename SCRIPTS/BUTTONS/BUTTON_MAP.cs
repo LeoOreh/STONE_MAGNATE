@@ -18,7 +18,7 @@ public class BUTTON_MAP : BUTTONS
         GL.name_mining_scene = TR.name;
 
 
-        SCENE_MINING.SET();
+        RESOURCE_SCENE.SET();
 
         UI_RESOURCE.UpdateUIValues();
 

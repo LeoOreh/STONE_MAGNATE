@@ -16,7 +16,7 @@ public class GAME : MonoBehaviour
 
 
         // хмхр юйрсюкэмнцн янярнъмхъ яжемш
-        SCENE_MINING.SET();
+        RESOURCE_SCENE.SET();
     }
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ public class GAME : MonoBehaviour
 
 
         // опнбепйю онксвемхъ пеяспянб (ЙНРНПШЕ ОН РЮИЛЕПС)
-        TIMER_GET_RESOURCE.CHECK();
+        RESOURCE_TIMER_GET.CHECK();
 
 
 

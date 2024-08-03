@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 88478273}
   - component: {fileID: 88478272}
   m_Layer: 5
-  m_Name: ICON_TYP
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 224464963}
   - component: {fileID: 224464962}
   m_Layer: 5
-  m_Name: DOWN
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2649,7 @@ GameObject:
   - component: {fileID: 922670285}
   - component: {fileID: 922670286}
   m_Layer: 5
-  m_Name: MONEY
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2891,7 +2891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1015819924}
   m_Layer: 5
-  m_Name: AMOUNT
+  m_Name: Resources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2929,7 +2929,7 @@ GameObject:
   - component: {fileID: 1021612728}
   - component: {fileID: 1021612729}
   m_Layer: 5
-  m_Name: RES
+  m_Name: slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3640,7 +3640,7 @@ GameObject:
   - component: {fileID: 1240255221}
   - component: {fileID: 1240255220}
   m_Layer: 5
-  m_Name: ICON_TYP
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3820,7 +3820,7 @@ GameObject:
   - component: {fileID: 1306536544}
   - component: {fileID: 1306536543}
   m_Layer: 5
-  m_Name: DOWN
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4011,7 +4011,7 @@ GameObject:
   - component: {fileID: 1334822783}
   - component: {fileID: 1334822782}
   m_Layer: 5
-  m_Name: ICON_TYP
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5599,7 +5599,7 @@ GameObject:
   - component: {fileID: 1939732857}
   - component: {fileID: 1939732856}
   m_Layer: 5
-  m_Name: DOWN
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
