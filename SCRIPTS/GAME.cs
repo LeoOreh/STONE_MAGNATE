@@ -16,7 +16,7 @@ public class GAME : MonoBehaviour
 
 
         // »Õ»“ ¿ “”¿À‹ÕŒ√Œ —Œ—“ŒﬂÕ»ﬂ —÷≈Õ€
-        RESOURCE_SCENE.SET();
+        RESOURCE_SCENE.SET(GL.name_mining_scene);
     }
     //-----------------------------------------------------------------------------------------------------------------
 

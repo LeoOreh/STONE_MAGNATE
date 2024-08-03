@@ -15,6 +15,9 @@ public class RESOURCE_TIMER_GET : RESOURCE
 
                 // ОБНОВИТЬ ЗНАЧЕНИЕ UI
                 UI_RESOURCE.UpdateUIValues();
+
+                // анимации
+                VISUAL_SCENE.ANIM(res.Key);
             }
         }
     }

@@ -15,10 +15,7 @@ public class BUTTON_MAP : BUTTONS
     //-----------------------------------------------------------------------------------------------------------------
     public void RES_Open(Transform TR)
     {
-        GL.name_mining_scene = TR.name;
-
-
-        RESOURCE_SCENE.SET();
+        RESOURCE_SCENE.SET(TR.name);
 
         UI_RESOURCE.UpdateUIValues();
 

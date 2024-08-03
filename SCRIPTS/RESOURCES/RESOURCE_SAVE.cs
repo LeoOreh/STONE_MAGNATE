@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
+// ÿ»‘–Œ¬¿ÕÕ€≈ ƒ¿ÕÕ€≈
 public class RESOURCE_SAVE : RESOURCE
 {
     //-----------------------------------------------------------------------------------------------------------------
@@ -12,7 +13,6 @@ public class RESOURCE_SAVE : RESOURCE
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    // «¿ÿ»‘–Œ¬¿ÕÕ€≈ ƒ¿ÕÕ€≈
     public static void GET()
     {
         if (File.Exists(path) == false) { return; }

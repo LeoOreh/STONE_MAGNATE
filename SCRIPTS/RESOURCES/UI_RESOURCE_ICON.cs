@@ -16,7 +16,7 @@ public class UI_RESOURCE_ICON : UI_RESOURCE
                 text.Value.transform.parent.gameObject.SetActive(true);
 
                 //включаем нужную иконку массива иконок
-                Sprite sprite = Resources.Load<Sprite>("Canvas/AMOUNT/RES/ICONs_TYP/icon_" + GL.typs_mining_resource[text.Key - 1]);
+                Sprite sprite = Resources.Load<Sprite>("ICONs_TYP/icon_" + GL.typs_mining_resource[text.Key - 1]);
                 text.Value.transform.parent.Find("icon").GetComponent<Image>().sprite = sprite;
             }
             else
