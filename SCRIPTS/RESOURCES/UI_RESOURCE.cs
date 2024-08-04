@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UI_RESOURCE : RESOURCE
 {

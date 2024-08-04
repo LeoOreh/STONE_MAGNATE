@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class VISUAL_SCENE : MonoBehaviour
+public class VISUAL_SCENE : RESOURCE_SCENE
 {
     static int an = 1;
     public static void ANIM (string res)
@@ -8,8 +8,8 @@ public class VISUAL_SCENE : MonoBehaviour
         foreach(string s in GL.typs_mining_resource) 
         { 
             if(s == res) 
-            { 
-                GameObject.Find("/Canvas/scene_resources_typ/" + GL.name_mining_scene + "/visual").GetComponent<Animator>().SetTrigger("KICK_" + an); 
+            {
+                mining_scene[GL.name_mining_scene].animator_mining.SetTrigger("KICK_" + an);
                 an++;
                 if(an > 3) { an = 1; }
             }

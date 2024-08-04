@@ -1,23 +1,18 @@
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class SAVE : MonoBehaviour
+public class BUTTON_MINING : RESOURCE
 {
     //-----------------------------------------------------------------------------------------------------------------
-    static float time_save;
+    Animator animator;
     //-----------------------------------------------------------------------------------------------------------------
 
 
 
+
     //-----------------------------------------------------------------------------------------------------------------
-    // œŒÀ”◊≈Õ»≈ —Œ’–¿Õ≈ÕÕ€’ ƒ¿ÕÕ€’
-    public static void GET()
+    private void Start()
     {
-        GL.name_mining_scene = PlayerPrefs.GetString("name_mining_scene", "BLACK");
-
-
-        // œŒÀ”◊»“‹ ƒ¿ÕÕ€≈ Œ –≈—”–—¿’ (ËÁ json)
-        RESOURCE_SAVE.GET();
+        animator = GetComponent<Animator>();
     }
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -25,17 +20,12 @@ public class SAVE : MonoBehaviour
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    // —Œ’–¿Õ»“‹ ƒ¿ÕÕ€≈ œŒ “¿…Ã≈–” 3ÒÂÍ
-    public static void TIMER_SAVE()
+    // ÍÎËÍ ÓÒÌÓ‚ÌÓÈ ÍÌÓÔÍË ÔÓ ÒÂÂ‰ËÌÂ ‰Îˇ ÛÒÍÓÂÌËˇ ‰Ó·˚˜Ë ÂÒÛÒÓ‚
+    public void Click()
     {
-        if (time_save > Time.time) { return; }
-        time_save = Time.time + 3;
-
-        PlayerPrefs.SetString("name_mining_scene", GL.name_mining_scene);
-
-
-        // —Œ’–¿Õ»“‹ ƒ¿ÕÕ€≈ Œ –≈—”–¿—’ (‚ json)
-        RESOURCE_SAVE.SET();
+        resources[GL.typs_mining_resource[0]].time_get = 0;
+        
+        animator.SetTrigger("Click");
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

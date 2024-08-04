@@ -16,13 +16,15 @@ public class RESOURCE_SCENE : RESOURCE
     };
     public class CLS_resource_scene
     {
-        public string[]   typs_mining_resource;   // типы добываемых ресурсов
-        public GameObject GO_Canvas;              // ссылка к блоку в канвас
+        public string[]     typs_mining_resource;   // типы добываемых ресурсов
+        public GameObject   GO_Canvas;              // ссылка к блоку в канвас
+        public Animator     animator_mining;        // ссылка к аниматору добычи
 
         public CLS_resource_scene(string _name, string[] _typs_mining_resource)
         {
             typs_mining_resource = _typs_mining_resource;
             GO_Canvas            = GameObject.Find("/Canvas/scene_resources_typ/" + _name);
+            animator_mining      = GO_Canvas.transform.Find("visual").GetComponent<Animator>();
         }
     }
     //-----------------------------------------------------------------------------------------------------------------
