@@ -31,10 +31,10 @@ public class UI_RESOURCE : RESOURCE
     // намнбхрэ гмювемхе бяеу пеяспянб (врнаш япюгс намнбхкхяэ гмювемхъ опх ялеме яжемш)
     public static void UpdateUIValues()
     {
-        money_text.text = score_money.ToString();
+        money_text.text = all_money.ToString();
 
         int n = 1;
-        foreach (string typ in GL.typs_mining_resource)
+        foreach (string typ in mining_scene[GL.name_mining_scene].typs_mining_resource)
         {
             resource_texts[n].text = resources[typ].score.ToString();
             n++;

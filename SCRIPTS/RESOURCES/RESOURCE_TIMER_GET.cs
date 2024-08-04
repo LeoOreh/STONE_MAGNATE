@@ -17,7 +17,7 @@ public class RESOURCE_TIMER_GET : RESOURCE
             else
             if (res.Value.activity_status == 1)
             {
-                if (res.Key != GL.typs_mining_resource[0]) { continue; }
+                if (res.Key != mining_scene[GL.name_mining_scene].typs_mining_resource[0]) { continue; }
                 if (res.Value.time_get != 0) { continue; }
 
                 res.Value.time_get        = Time.time;

@@ -5,6 +5,10 @@ public class INITIALIZATION : MonoBehaviour
     //-----------------------------------------------------------------------------------------------------------------
     public static void I()
     {
+        // коллекции ресурсов
+        RESOURCE_INIT.I();
+
+
         // UI РЕСУРСОВ
         UI_RESOURCE.I();
 

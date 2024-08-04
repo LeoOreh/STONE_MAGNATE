@@ -14,10 +14,6 @@ public class SAVE : MonoBehaviour
     public static void GET()
     {
         GL.name_mining_scene = PlayerPrefs.GetString("name_mining_scene", "BLACK");
-
-
-        // онксвхрэ дюммше н пеяспяюу (ХГ json)
-        RESOURCE_SAVE.GET();
     }
     //-----------------------------------------------------------------------------------------------------------------
 

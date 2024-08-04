@@ -23,7 +23,7 @@ public class BUTTON_MINING : RESOURCE
     // клик основной кнопки по середине для ускорения добычи ресурсов
     public void Click()
     {
-        resources[GL.typs_mining_resource[0]].time_get = 0;
+        resources[mining_scene[GL.name_mining_scene].typs_mining_resource[0]].time_get = 0;
         
         animator.SetTrigger("Click");
     }
