@@ -56,6 +56,9 @@ public class RESOURCE_SCENE : RESOURCE
 
         // юйрхбхпсел UI
         UI_RESOURCE_ICON.SET_ICONS(GL.typs_mining_resource.Length);
+
+        // намнбхрэ гмювемхе UI
+        UI_RESOURCE.UpdateUIValues();
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

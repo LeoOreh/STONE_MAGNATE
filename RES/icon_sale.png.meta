@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: da09c48905d91294e9b8db80d5464f15
+guid: b23b5070e8b1528439816e48b5664352
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3093979473664756730
-    second: TREE_0
-  - first:
-      213: -1231594127326116247
-    second: TREE_1
-  - first:
-      213: -1146078223187830592
-    second: TREE_2
+      213: -3583048938875797601
+    second: icon_sale_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TREE_0
+      name: icon_sale_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 345
+        height: 345
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afb432e40f500fa20800000000000000
-      internalID: 3093979473664756730
+      spriteID: f9fb77159f3764ec0800000000000000
+      internalID: -3583048938875797601
       vertices: []
       indices: 
       edges: []
@@ -144,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0f0bcf5bad66362448b8eb787727fb10
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -153,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TREE_0: 3093979473664756730
-      TREE_1: -1231594127326116247
-      TREE_2: -1146078223187830592
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

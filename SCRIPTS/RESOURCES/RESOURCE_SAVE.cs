@@ -21,9 +21,12 @@ public class RESOURCE_SAVE : RESOURCE
         string jsonString           = Encryption_JSON.De(encryptedJsonString);
         var js                      = JsonConvert.DeserializeObject<Dictionary<string, CLS_resource>>(jsonString);
 
-        // Œ¡Õ”À»“‹ “¿…Ã≈–€
+        // ¿ “”¿À»«»–Œ¬¿“‹ ƒ¿ÕÕ€≈
         foreach (KeyValuePair<string, CLS_resource> r in js) 
-        { resources[r.Key].score = r.Value.score; }
+        { 
+            resources[r.Key].score  = r.Value.score;
+            resources[r.Key].activity_status = r.Value.activity_status;
+        }
 
     }
     //-----------------------------------------------------------------------------------------------------------------
