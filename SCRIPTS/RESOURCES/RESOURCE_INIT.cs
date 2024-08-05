@@ -7,35 +7,37 @@ public class RESOURCE_INIT : RESOURCE
 //-----------------------------------------------------------------------------------------------------------------
     public static void I()
     {
-        // все типы ресурсов
-        resources_typs = new Dictionary<string, CLS_resource>()
-        {
-            ["MONEY"]   = new CLS_resource("MONEY",   0, 0.0f, 0),
-            ["BLACK"]   = new CLS_resource("BLACK",   2, 1.0f, 1),
-            ["TREE"]    = new CLS_resource("TREE",    2, 1.4f, 1),
-            ["GREEN"]   = new CLS_resource("GREEN",   2, 2.5f, 1),
-            ["GLASS"]   = new CLS_resource("GLASS",   2, 1.8f, 1),
-            ["RED"]     = new CLS_resource("RED",     2, 2.5f, 1),
-            ["YELLOW"]  = new CLS_resource("YELLOW",  2, 2.5f, 1),
-        };
-        CLS_resource add_typ(string nm)
-        {
-            CLS_resource copy           = new CLS_resource();
-            copy.name                   = resources_typs[nm].name;
-            copy.activity_status        = resources_typs[nm].activity_status;
-            copy.time_interval          = resources_typs[nm].time_interval;
-            copy.value_get_resources    = resources_typs[nm].value_get_resources;
-            return copy;
-        }
+        //----------------------------------------------------------------------------------
         // —÷≈Ќџ ƒќЅџ¬ј≈ћџ’ –≈—”–—ќ¬ (ћќ∆≈“ Ѕџ“№ Ќ≈ ќЋ№ ќ ¬»ƒќ¬ —–ј«”)
-        mining_scene = new Dictionary<string, CLS_mining_scene>()
+        // чтобы добавить новый, нужно добавить на сцене в "mining_scene" и "MAP/WINDOW"
+        // создаем сцены с добычей
+        mining_scene = new Dictionary<string, CLS_mining_scene>();
+
+        // на сцену добовл€ем виды ресурсов (до 5)
+        Add_Resource_in_scene();
+        void Add_Resource_in_scene()
         {
-            ["BLACK"]       = new CLS_mining_scene ("BLACK",        new CLS_resource[] { add_typ("BLACK") }),
-            ["GLASS"]       = new CLS_mining_scene ("GLASS",        new CLS_resource[] { add_typ("GLASS") }),
-            ["GREEN"]       = new CLS_mining_scene ("GREEN",        new CLS_resource[] { add_typ("GREEN") }),
-            ["GREEN_GLASS"] = new CLS_mining_scene ("GREEN_GLASS",  new CLS_resource[] { add_typ("GREEN"), add_typ("GLASS") }),
-            ["TREE"]        = new CLS_mining_scene ("TREE",         new CLS_resource[] { add_typ("TREE") }),
-        };
+            foreach (KeyValuePair<string, string[]> list in list_mining_scene)
+            {
+                mining_scene.Add(list.Key, new CLS_mining_scene(list.Key, add_typs_minig_scene(list_mining_scene[list.Key])));
+            }
+            CLS_resource[] add_typs_minig_scene(string[] nm)
+            {
+                CLS_resource[] copy = new CLS_resource[nm.Length];
+                for (int i = 0; i < nm.Length; i++)
+                {
+                    copy[i]                     = new CLS_resource();
+                    copy[i].name                = resources_typs[nm[i]].name;
+                    copy[i].activity_status     = resources_typs[nm[i]].activity_status;
+                    copy[i].time_interval       = resources_typs[nm[i]].time_interval;
+                    copy[i].value_get_resources = resources_typs[nm[i]].value_get_resources;
+                }
+                return copy;
+            }
+        }
+        //----------------------------------------------------------------------------------
+
+
 
 
 
@@ -75,14 +77,14 @@ public class CLS_resource
 //-----------------------------------------------------------------------------------------------------------------
 public class CLS_mining_scene
 {
-    [JsonProperty] public CLS_resource[]   typs_mining          { get; set; }  // типы добываемых ресурсов
+    [JsonProperty] public CLS_resource[] typs_mining        { get; set; }  // типы добываемых ресурсов
     [JsonIgnore]   public GameObject     GO_Canvas_typ_mining { get; set; }  // ссылка к блоку в канвас
     [JsonIgnore]   public Animator       animator_mining      { get; set; }  // ссылка к аниматору добычи
 
     public CLS_mining_scene(string _name, CLS_resource[]  _typs_mining)
     {
         typs_mining          = _typs_mining;
-        GO_Canvas_typ_mining = GameObject.Find("/Canvas/scene_resources_typ/" + _name);
+        GO_Canvas_typ_mining = GameObject.Find("/Canvas").transform.Find("mining_scene/" + _name).gameObject;
         animator_mining      = GO_Canvas_typ_mining.transform.Find("visual").GetComponent<Animator>();
     }
     public CLS_mining_scene() { }

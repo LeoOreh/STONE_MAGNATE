@@ -35,8 +35,10 @@ public class RESOURCE_SAVE : RESOURCE
         {
             for (int k = 0; k < scene.Value.typs_mining.Length; k++)
             {
-                mining_scene[scene.Key].typs_mining[k].activity_status  = scene.Value.typs_mining[k].activity_status;
-                mining_scene[scene.Key].typs_mining[k].score            = scene.Value.typs_mining[k].score;
+                mining_scene[scene.Key].typs_mining[k].activity_status      = scene.Value.typs_mining[k].activity_status;
+                mining_scene[scene.Key].typs_mining[k].score                = scene.Value.typs_mining[k].score;            
+                mining_scene[scene.Key].typs_mining[k].time_interval        = scene.Value.typs_mining[k].time_interval;            
+                mining_scene[scene.Key].typs_mining[k].value_get_resources  = scene.Value.typs_mining[k].value_get_resources;
             }
         }
     }
