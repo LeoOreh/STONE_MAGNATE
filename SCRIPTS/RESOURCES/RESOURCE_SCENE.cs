@@ -20,7 +20,7 @@ public class RESOURCE_SCENE : RESOURCE
 
 
         // юйрхбхпсел UI
-        UI_RESOURCE_ICON.SET_ICONS(mining_scene[GL.name_mining_scene].typs_mining_resource.Length);
+        UI_RESOURCE_ICON.SET_ICONS(mining_scene[GL.name_mining_scene].resource.Length);
 
         // намнбхрэ гмювемхе UI
         UI_RESOURCE.UpdateUIValues();

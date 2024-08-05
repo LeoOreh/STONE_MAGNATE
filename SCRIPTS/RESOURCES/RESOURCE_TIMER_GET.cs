@@ -7,41 +7,43 @@ public class RESOURCE_TIMER_GET : RESOURCE
     // ПРОВЕРКА ТАЙМЕРОВ ПОЛУЧЕНИЯ РЕСУРСОВ
     public static void CHECK()
     {
-        foreach(KeyValuePair<string, CLS_resource> res in resources)
+        foreach(KeyValuePair<string, CLS_resource_scene> scene in mining_scene)
         {
-            // добыча не производится
-            if (res.Value.activity_status == 0) { continue; }
-
-
-            // только ручная добыча
-            else
-            if (res.Value.activity_status == 1)
+            foreach (CLS_resource res in scene.Value.resource)
             {
-                if (res.Key != mining_scene[GL.name_mining_scene].typs_mining_resource[0]) { continue; }
-                if (res.Value.time_get != 0) { continue; }
+                // добыча не производится
+                if (res.activity_status == 0) { continue; }
 
-                res.Value.time_get        = Time.time;
-                resources[res.Key].score += resources[res.Key].value_get_resources;
+
+                // только ручная добыча
+                else
+                if (res.activity_status == 1)
+                {
+                    if (res != mining_scene[GL.name_mining_scene].resource[0]) { continue; }
+                    if (res.time_get != 0) { continue; }
+
+                    res.time_get = Time.time;
+                    res.score += res.value_get_resources;
+                }
+
+
+                // автоматическая добыча + ручная
+                else
+                if (res.activity_status == 2)
+                {
+                    if (Time.time < res.time_get) { continue; }
+
+                    res.time_get = Time.time + res.time_interval;
+                    res.score += res.value_get_resources;
+                }
+
+
+                // ОБНОВИТЬ ЗНАЧЕНИЕ UI
+                UI_RESOURCE.UpdateUIValues();
+
+                // анимации
+                VISUAL_SCENE.ANIM(scene.Key, res.name);
             }
-
-
-            // автоматическая добыча + ручная
-            else
-            if (res.Value.activity_status == 2)
-            {
-                if (Time.time < res.Value.time_get) { continue; }
-
-                resources[res.Key].time_get = Time.time + resources[res.Key].time_interval;
-                resources[res.Key].score   += resources[res.Key].value_get_resources;
-            }
-
-
-
-            // ОБНОВИТЬ ЗНАЧЕНИЕ UI
-            UI_RESOURCE.UpdateUIValues();
-
-            // анимации
-            VISUAL_SCENE.ANIM(res.Key);
         }
     }
     //-----------------------------------------------------------------------------------------------------------------

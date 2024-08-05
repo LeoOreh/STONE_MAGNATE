@@ -34,9 +34,9 @@ public class UI_RESOURCE : RESOURCE
         money_text.text = all_money.ToString();
 
         int n = 1;
-        foreach (string typ in mining_scene[GL.name_mining_scene].typs_mining_resource)
+        foreach (CLS_resource typ in mining_scene[GL.name_mining_scene].resource)
         {
-            resource_texts[n].text = resources[typ].score.ToString();
+            resource_texts[n].text = typ.score.ToString();
             n++;
         }
     }
