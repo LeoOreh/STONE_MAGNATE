@@ -10,16 +10,17 @@ public class VISUAL_SCENE : RESOURCE_SCENE
     //-----------------------------------------------------------------------------------------------------------------
     public static void ANIM (string scene, string res)
     {
-        if (scene != GL.name_mining_scene) { return; }
+        if (scene == GL.name_mining_scene)
+        {
+            foreach (CLS_resource s in mining_scene[GL.name_mining_scene].typs_mining)
+            {
+                if (s.name != res) { continue; }
 
-        foreach (CLS_resource s in mining_scene[GL.name_mining_scene].resource) 
-        { 
-            if(s.name != res) { continue; }
-            
-            mining_scene[GL.name_mining_scene].animator_mining.SetTrigger("KICK_" + an);
-            an++;
-            if(an > 3) { an = 1; }
-        }     
+                mining_scene[GL.name_mining_scene].animator_mining.SetTrigger("KICK_" + an);
+                an++;
+                if (an > 3) { an = 1; }
+            }
+        }
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

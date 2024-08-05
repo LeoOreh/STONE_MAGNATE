@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class RESOURCE_TIMER_GET : RESOURCE
@@ -7,9 +8,9 @@ public class RESOURCE_TIMER_GET : RESOURCE
     // опнбепйю рюилепнб онксвемхъ пеяспянб
     public static void CHECK()
     {
-        foreach(KeyValuePair<string, CLS_resource_scene> scene in mining_scene)
+        foreach(KeyValuePair<string, CLS_mining_scene> scene in mining_scene)
         {
-            foreach (CLS_resource res in scene.Value.resource)
+            foreach (CLS_resource res in scene.Value.typs_mining)
             {
                 // ДНАШВЮ МЕ ОПНХГБНДХРЯЪ
                 if (res.activity_status == 0) { continue; }
@@ -19,7 +20,7 @@ public class RESOURCE_TIMER_GET : RESOURCE
                 else
                 if (res.activity_status == 1)
                 {
-                    if (res != mining_scene[GL.name_mining_scene].resource[0]) { continue; }
+                    if (res != mining_scene[GL.name_mining_scene].typs_mining[0]) { continue; }
                     if (res.time_get != 0) { continue; }
 
                     res.time_get = Time.time;

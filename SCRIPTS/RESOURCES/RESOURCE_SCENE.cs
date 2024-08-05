@@ -11,16 +11,16 @@ public class RESOURCE_SCENE : RESOURCE
 
 
         // деюйрхбхпсел бяе яжемш CANVAS
-        foreach (KeyValuePair<string, CLS_resource_scene> R in mining_scene)
-        { R.Value.GO_Canvas.SetActive(false); }
+        foreach (KeyValuePair<string, CLS_mining_scene> R in mining_scene)
+        { R.Value.GO_Canvas_typ_mining.SetActive(false); }
 
         // юйрхбхпсел мсфмши CANVAS
-        mining_scene[GL.name_mining_scene].GO_Canvas.SetActive(true);
+        mining_scene[GL.name_mining_scene].GO_Canvas_typ_mining.SetActive(true);
 
 
 
         // юйрхбхпсел UI
-        UI_RESOURCE_ICON.SET_ICONS(mining_scene[GL.name_mining_scene].resource.Length);
+        UI_RESOURCE_ICON.SET_ICONS(mining_scene[GL.name_mining_scene].typs_mining.Length);
 
         // намнбхрэ гмювемхе UI
         UI_RESOURCE.UpdateUIValues();
