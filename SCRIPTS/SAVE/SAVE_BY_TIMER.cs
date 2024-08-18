@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class SAVE : MonoBehaviour
+public class SAVE_BY_TIMER : MonoBehaviour
 {
     //-----------------------------------------------------------------------------------------------------------------
     static float time_save;
@@ -31,7 +31,7 @@ public class SAVE : MonoBehaviour
 
 
         // —Œ’–¿Õ»“‹ ƒ¿ÕÕ€≈ Œ –≈—”–¿—’ (‚ json)
-        RESOURCE_SAVE.SET();
+        SAVE_RESOURCE.SET();
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

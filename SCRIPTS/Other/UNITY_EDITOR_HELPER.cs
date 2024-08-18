@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-public class HELPER : MonoBehaviour
+public class UNITY_EDITOR_HELPER : MonoBehaviour
 {
     // получить в логи путь к объекту на сцене
     [MenuItem("[-----i----]/ѕќЋ”„»“№ ѕ”“№")]

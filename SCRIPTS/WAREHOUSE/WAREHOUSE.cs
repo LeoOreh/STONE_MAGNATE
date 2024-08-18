@@ -30,7 +30,7 @@ public class WAREHOUSE : MonoBehaviour
             ["PETROLEUM"]   = new CLS_warehouse("PETROLEUM",  CLS_warehouse.typs_warehouse.mining),
         };
 
-        WAREHOUSE_SAVE.GET();
+        SAVE_WAREHOUSE.GET();
     }
     //-----------------------------------------------------------------------------------------------------------------
 

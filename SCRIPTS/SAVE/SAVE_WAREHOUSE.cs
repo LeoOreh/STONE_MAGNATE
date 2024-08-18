@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
-// ШИФРОВАННЫЕ ДАННЫЕ
-public class RESOURCE_SAVE : RESOURCE
+public class SAVE_WAREHOUSE : WAREHOUSE
 {
+
     //-----------------------------------------------------------------------------------------------------------------
-    static string path      = Application.persistentDataPath + "/sv_res.ololo";
-    static string path_JSN  = Application.persistentDataPath + "/sv_res.json";
+    static string path      = Application.persistentDataPath + "/sv_wrh.ololo";
+    static string path_JSN  = Application.persistentDataPath + "/sv_wrh.json";
     //-----------------------------------------------------------------------------------------------------------------
 
 
@@ -16,20 +16,20 @@ public class RESOURCE_SAVE : RESOURCE
     //-----------------------------------------------------------------------------------------------------------------
     public static void GET()
     {
-        Dictionary<string, CLS_mining_scene> js;
+        Dictionary<string, CLS_warehouse> js;
         if (GL.TST_____OPEN_JSON == false)
         {
             if (File.Exists(path) == false) { return; }
             string encryptedJsonString = File.ReadAllText(path);
             string jsonString = Encryption_JSON.De(encryptedJsonString);
-            js = JsonConvert.DeserializeObject<Dictionary<string, CLS_mining_scene>>(jsonString);
+            js = JsonConvert.DeserializeObject<Dictionary<string, CLS_warehouse>>(jsonString);
         }
         else
         {
             if (File.Exists(path_JSN) == false) { return; }
             // нижние две строчик удалить, а выше открыть
             string encryptedJsonString = File.ReadAllText(path_JSN);
-            js = JsonConvert.DeserializeObject<Dictionary<string, CLS_mining_scene>>(encryptedJsonString);
+            js = JsonConvert.DeserializeObject<Dictionary<string, CLS_warehouse>>(encryptedJsonString);
         }
 
 
@@ -37,16 +37,10 @@ public class RESOURCE_SAVE : RESOURCE
 
 
         // УСТАНОВИТЬ ПОЛУЧЕННЫЕ ДАННЫЕ О РЕСУРСАХ НА СЦЕНАХ
-        foreach (KeyValuePair<string, CLS_mining_scene> scene in js)
+        foreach (KeyValuePair<string, CLS_warehouse> warehous in js)
         {
-            for (int k = 1; k <= scene.Value.typs_mining.Count; k++)
-            {
-                mining_scene[scene.Key].typs_mining[k].activity_status      = scene.Value.typs_mining[k].activity_status;
-                mining_scene[scene.Key].typs_mining[k].score                = scene.Value.typs_mining[k].score;
-                mining_scene[scene.Key].typs_mining[k].score_max            = scene.Value.typs_mining[k].score_max;
-                mining_scene[scene.Key].typs_mining[k].time_interval        = scene.Value.typs_mining[k].time_interval;            
-                mining_scene[scene.Key].typs_mining[k].value_get_resources  = scene.Value.typs_mining[k].value_get_resources;
-            }
+            warehouses_typs[warehous.Key].name  = warehous.Value.name;
+            warehouses_typs[warehous.Key].score = warehous.Value.score;        
         }
     }
     //-----------------------------------------------------------------------------------------------------------------
@@ -56,9 +50,9 @@ public class RESOURCE_SAVE : RESOURCE
     //-----------------------------------------------------------------------------------------------------------------
     public static void SET()
     {
-        string jsonString               = JsonConvert.SerializeObject(mining_scene, Formatting.Indented);
+        string jsonString = JsonConvert.SerializeObject(warehouses_typs, Formatting.Indented);
         File.WriteAllText(path_JSN, jsonString);
-        jsonString                      = Encryption_JSON.En(jsonString);
+        jsonString = Encryption_JSON.En(jsonString);
         File.WriteAllText(path, jsonString);
     }
     //-----------------------------------------------------------------------------------------------------------------

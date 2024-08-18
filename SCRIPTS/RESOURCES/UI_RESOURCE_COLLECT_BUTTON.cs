@@ -17,6 +17,6 @@ public class UI_RESOURCE_COLLECT_BUTTON : UI_RESOURCE
         WAREHOUSE.warehouses_typs[typ_mining.name].score += typ_mining.score;
 
         typ_mining.score = 0;
-        WAREHOUSE_SAVE.SET();
+        SAVE_WAREHOUSE.SET();
     }
 }

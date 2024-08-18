@@ -6,7 +6,7 @@ public class GAME : MonoBehaviour
     void Start()
     {
         // онксвхрэ янупюмеммше дюммше
-        SAVE.GET();
+        SAVE_BY_TIMER.GET();
 
 
 
@@ -33,7 +33,7 @@ public class GAME : MonoBehaviour
 
 
         // янупюмемхе он рюилепс 3ЯЕЙ
-        SAVE.TIMER_SAVE();
+        SAVE_BY_TIMER.TIMER_SAVE();
     }
     //-----------------------------------------------------------------------------------------------------------------
 }
