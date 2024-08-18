@@ -16,7 +16,7 @@ public class BUTTONS : MonoBehaviour
     {
         canvas  = GameObject.Find("Canvas");
         map     = canvas.transform.Find("menu/MAP").gameObject;
-        sale    = canvas.transform.Find("menu/SALE").gameObject;
+        sale    = canvas.transform.Find("menu/WAREHOUSE").gameObject;
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

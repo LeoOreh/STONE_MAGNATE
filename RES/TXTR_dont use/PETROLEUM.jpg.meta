@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd21a0f803757244bac0d7f31d6c4f73
+guid: f207f7414f463614399bcd1f357d491c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3503789386397439228
-    second: QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0
+      213: 7044335886631183872
+    second: PETROLEUM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0
+      name: PETROLEUM_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 960
-        height: 1920
+        width: 768
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40b2fffed1a006fc0800000000000000
-      internalID: -3503789386397439228
+      spriteID: 00620399a2282c160800000000000000
+      internalID: 7044335886631183872
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0: -3503789386397439228
+      PETROLEUM_0: 7044335886631183872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

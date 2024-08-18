@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class BUTTON_SALE : BUTTONS
+public class BUTTON_WAREHOUSES : BUTTONS
 {
     //-----------------------------------------------------------------------------------------------------------------
-    public void SALE_Close()
+    public void WAREHOUSES_Close()
     {
         sale.SetActive(false);
     }

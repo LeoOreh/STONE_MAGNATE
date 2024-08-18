@@ -30,13 +30,19 @@ public class RESOURCE_SAVE : RESOURCE
             string encryptedJsonString = File.ReadAllText(Application.persistentDataPath + "/sv_res.json");
             js = JsonConvert.DeserializeObject<Dictionary<string, CLS_mining_scene>>(encryptedJsonString);
         }
+
+
+
+
+
         // ¿ “”¿À»«»–Œ¬¿“‹ ƒ¿ÕÕ€≈
         foreach (KeyValuePair<string, CLS_mining_scene> scene in js)
         {
             for (int k = 0; k < scene.Value.typs_mining.Length; k++)
             {
                 mining_scene[scene.Key].typs_mining[k].activity_status      = scene.Value.typs_mining[k].activity_status;
-                mining_scene[scene.Key].typs_mining[k].score                = scene.Value.typs_mining[k].score;            
+                mining_scene[scene.Key].typs_mining[k].score                = scene.Value.typs_mining[k].score;
+                mining_scene[scene.Key].typs_mining[k].score_max            = scene.Value.typs_mining[k].score_max;
                 mining_scene[scene.Key].typs_mining[k].time_interval        = scene.Value.typs_mining[k].time_interval;            
                 mining_scene[scene.Key].typs_mining[k].value_get_resources  = scene.Value.typs_mining[k].value_get_resources;
             }

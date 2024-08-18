@@ -13,6 +13,10 @@ public class INITIALIZATION : MonoBehaviour
         UI_RESOURCE.I();
 
 
+        // бяеу опндсйрнб
+        WAREHOUSE.INIT();
+
+
         // ймнонй
         BUTTONS.I();
     }

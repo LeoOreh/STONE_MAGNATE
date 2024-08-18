@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd21a0f803757244bac0d7f31d6c4f73
+guid: dff12ce50c134c84b9a5c3170dc2375c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3503789386397439228
-    second: QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0
+      213: -2488724328361406980
+    second: icon_YELLOW_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0
+      name: icon_YELLOW_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 960
-        height: 1920
+        x: 36
+        y: 57
+        width: 472
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40b2fffed1a006fc0800000000000000
-      internalID: -3503789386397439228
+      spriteID: cfd4520c866467dd0800000000000000
+      internalID: -2488724328361406980
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      QM3RRR9qJWwGZcJBnO78yJAv50gKbgRf_0: -3503789386397439228
+      icon_YELLOW_0: -2488724328361406980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
