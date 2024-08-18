@@ -13,8 +13,8 @@ public class INITIALIZATION : MonoBehaviour
         UI_RESOURCE.I();
 
 
-        // бяеу опндсйрнб
-        WAREHOUSE.INIT();
+        // яйкюдю (бяеу опндсйрнб)
+        WAREHOUSE_INIT.I();
 
 
         // ймнонй

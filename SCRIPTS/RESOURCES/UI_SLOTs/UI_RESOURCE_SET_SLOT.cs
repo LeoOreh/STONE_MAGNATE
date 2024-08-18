@@ -9,7 +9,7 @@ public class UI_RESOURCE_SET_SLOT : UI_RESOURCE
     // УСТАНОВИТЬ ИКОНКИ РЕСУРСОВ
     public static void SET(int count_active_slots)
     {
-        foreach (KeyValuePair<int, UI_RESOURCE_SLOT> slt in resource_UI)
+        foreach (KeyValuePair<int, CLS_UI_RESOURCE_SLOT> slt in resource_UI)
         {
             if (slt.Key <= count_active_slots)
             {
@@ -20,7 +20,7 @@ public class UI_RESOURCE_SET_SLOT : UI_RESOURCE
                 slt.Value.name = res_name;
 
                 //включаем нужную иконку из массива иконок
-                Sprite sprite = Resources.Load<Sprite>("ICONs_TYP/icon_" + res_name);
+                Sprite sprite = Resources.Load<Sprite>(Paths.UI_RESOURCE_ICONs_TYP + "icon_" + res_name);
                 slt.Value.icon.sprite = sprite;
             }
             else

@@ -16,7 +16,7 @@ public class BUTTON_MENU : BUTTONS
     {
         sale.SetActive(true);
 
-        WAREHOUSE_OPEN.O();
+        WAREHOUSE_UPDATE_Values.O();
     }
     //-----------------------------------------------------------------------------------------------------------------
 }

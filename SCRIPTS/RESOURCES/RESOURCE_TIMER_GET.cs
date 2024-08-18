@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Rendering.Universal.Internal;
 using UnityEngine;
 
 public class RESOURCE_TIMER_GET : RESOURCE
@@ -10,14 +11,22 @@ public class RESOURCE_TIMER_GET : RESOURCE
     {
         if (Time.time > timer_check)
         {
-            timer_check = Time.time + 0.2f;
+            timer_check = Time.time + 0.3f;
 
             foreach (KeyValuePair<string, CLS_mining_scene> scene in mining_scene)
             {
                 foreach (KeyValuePair<int, CLS_resource> res in scene.Value.typs_mining)
                 {
                     // если заполнен
-                    if(res.Value.score >= res.Value.score_max) { continue; }
+                    if(res.Value.score >= res.Value.score_max) 
+                    {
+                        if (scene.Key == GL.name_mining_scene) { resource_UI[res.Key].frame_animator.SetBool("slot_full", true); }
+                        continue; 
+                    }
+                    else
+                    {
+                        if (scene.Key == GL.name_mining_scene) { resource_UI[res.Key].frame_animator.SetBool("slot_full", false); }
+                    }
 
 
                     // добыча не производится

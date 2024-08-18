@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class UI_RESOURCE : RESOURCE
 {
     //-----------------------------------------------------------------------------------------------------------------
-    protected static TextMeshProUGUI                  money_text;
-
-    protected static Dictionary<int, UI_RESOURCE_SLOT> resource_UI;
+    protected static TextMeshProUGUI                   money_text;
     //-----------------------------------------------------------------------------------------------------------------
 
 
@@ -19,8 +17,8 @@ public class UI_RESOURCE : RESOURCE
     {
         money_text = GameObject.Find("/Canvas/show_count_resources/Money/TXT").GetComponent<TextMeshProUGUI>();
 
-        resource_UI = new Dictionary<int, UI_RESOURCE_SLOT>();
-        for (int i = 1; i <= 5; i++) { resource_UI.Add(i, new UI_RESOURCE_SLOT(i)); }      
+        resource_UI = new Dictionary<int, CLS_UI_RESOURCE_SLOT>();
+        for (int i = 1; i <= 5; i++) { resource_UI.Add(i, new CLS_UI_RESOURCE_SLOT(i)); }      
     }
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -41,24 +39,4 @@ public class UI_RESOURCE : RESOURCE
         }
     }
     //-----------------------------------------------------------------------------------------------------------------
-
-    public class UI_RESOURCE_SLOT
-    {
-        public string name;
-        public GameObject slot;
-        public TextMeshProUGUI text;
-        public Image icon;
-        public Image fill;
-
-        public UI_RESOURCE_SLOT(int n)
-        {
-            string pth = "/Canvas/show_count_resources/slots/" + n;
-
-            name = "";
-            slot = GameObject.Find(pth);
-            text = GameObject.Find(pth + "/TXT")              .GetComponent<TextMeshProUGUI>();
-            fill = GameObject.Find(pth + "/visual_fill/fill") .GetComponent<Image>();
-            icon = GameObject.Find(pth + "/icon")             .GetComponent<Image>();
-        }
-    }
 }
