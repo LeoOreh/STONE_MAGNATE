@@ -11,5 +11,8 @@ public class BUTTON_WAREHOUSES : BUTTONS
 
 
 
-
+    public void Select_product(GameObject GO)
+    {
+        Debug.Log(GO.name);
+    }
 }

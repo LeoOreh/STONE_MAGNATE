@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RESOURCE_TIMER_GET : RESOURCE
 {
-    static float timer_check;
+    public static float timer_check;
     //-----------------------------------------------------------------------------------------------------------------
     // опнбепйю рюилепнб онксвемхъ пеяспянб
     public static void CHECK()
