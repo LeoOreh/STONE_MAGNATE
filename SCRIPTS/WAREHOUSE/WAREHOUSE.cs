@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class WAREHOUSE : MonoBehaviour
             ["YELLOW"]      = new CLS_warehouse("YELLOW",     CLS_warehouse.typs_warehouse.mining),
             ["PETROLEUM"]   = new CLS_warehouse("PETROLEUM",  CLS_warehouse.typs_warehouse.mining),
         };
+
+        WAREHOUSE_SAVE.GET();
     }
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -39,10 +42,10 @@ public class WAREHOUSE : MonoBehaviour
     {
         public enum typs_warehouse { mining, coin, production }
 
-        public TextMeshProUGUI  count_text  { get; set; }
-        public string           name        { get; set; }
-        public typs_warehouse   typ_product { get; set; }
-        public int              score       { get; set; }    // общее колличество этого продукта
+        [JsonIgnore]   public TextMeshProUGUI  count_text  { get; set; }
+        [JsonProperty] public string           name        { get; set; }
+        [JsonIgnore]   public typs_warehouse   typ_product { get; set; }
+        [JsonProperty] public int              score       { get; set; }    // общее колличество этого продукта
 
         public CLS_warehouse(string _name, typs_warehouse _typ_product)
         {

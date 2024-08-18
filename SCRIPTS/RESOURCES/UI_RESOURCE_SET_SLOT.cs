@@ -16,7 +16,7 @@ public class UI_RESOURCE_SET_SLOT : UI_RESOURCE
                 slt.Value.slot.SetActive(true);
 
                 // определяем имя для слота
-                string res_name = mining_scene[GL.name_mining_scene].typs_mining[slt.Key - 1].name;
+                string res_name = mining_scene[GL.name_mining_scene].typs_mining[slt.Key].name;
                 slt.Value.name = res_name;
 
                 //включаем нужную иконку из массива иконок

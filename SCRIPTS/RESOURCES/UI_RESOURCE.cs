@@ -32,10 +32,10 @@ public class UI_RESOURCE : RESOURCE
         money_text.text = WAREHOUSE.warehouses_typs["MONEY"].score.ToString();
 
         int n = 1;
-        foreach (CLS_resource typ in mining_scene[GL.name_mining_scene].typs_mining)
+        foreach (KeyValuePair<int, CLS_resource> typ in mining_scene[GL.name_mining_scene].typs_mining)
         {
-            resource_UI[n].text.text       = typ.score.ToString();
-            resource_UI[n].fill.fillAmount = (float)typ.score / (float)typ.score_max;
+            resource_UI[n].text.text       = typ.Value.score.ToString();
+            resource_UI[n].fill.fillAmount = (float)typ.Value.score / (float)typ.Value.score_max;
 
             n++;
         }

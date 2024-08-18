@@ -22,17 +22,20 @@ public class RESOURCE_INIT : RESOURCE
                 mining_scene.Add(list.Key, new CLS_mining_scene(list.Key, add_typs_minig_scene(list_mining_scene[list.Key])));
             }
 
-            CLS_resource[] add_typs_minig_scene(string[] nm)
+            Dictionary<int, CLS_resource> add_typs_minig_scene(string[] nm)
             {
-                CLS_resource[] copy = new CLS_resource[nm.Length];
-                for (int i = 0; i < nm.Length; i++)
+                Dictionary<int, CLS_resource> copy = new Dictionary<int, CLS_resource>();
+                int n = 1;
+                foreach (string str in nm)
                 {
-                    copy[i]                     = new CLS_resource();                   
-                    copy[i].name                = resources_typs[nm[i]].name;
-                    copy[i].activity_status     = resources_typs[nm[i]].activity_status;
-                    copy[i].time_interval       = resources_typs[nm[i]].time_interval;
-                    copy[i].value_get_resources = resources_typs[nm[i]].value_get_resources;
-                    copy[i].score_max           = resources_typs[nm[i]].score_max;
+                    copy.Add(n, new CLS_resource());
+                    copy[n]                     = new CLS_resource();                   
+                    copy[n].name                = resources_typs[str].name;
+                    copy[n].activity_status     = resources_typs[str].activity_status;
+                    copy[n].time_interval       = resources_typs[str].time_interval;
+                    copy[n].value_get_resources = resources_typs[str].value_get_resources;
+                    copy[n].score_max           = resources_typs[str].score_max;
+                    n++;
                 }
                 return copy;
             }
@@ -82,11 +85,11 @@ public class CLS_resource
 //-----------------------------------------------------------------------------------------------------------------
 public class CLS_mining_scene
 {
-    [JsonProperty] public CLS_resource[] typs_mining          { get; set; }  // типы добываемых ресурсов
-    [JsonIgnore]   public GameObject     GO_Canvas_typ_mining { get; set; }  // ссылка к блоку в канвас
-    [JsonIgnore]   public Animator       animator_mining      { get; set; }  // ссылка к аниматору добычи
+    [JsonProperty] public Dictionary<int, CLS_resource> typs_mining          { get; set; }  // типы добываемых ресурсов
+    [JsonIgnore]   public GameObject                    GO_Canvas_typ_mining { get; set; }  // ссылка к блоку в канвас
+    [JsonIgnore]   public Animator                      animator_mining      { get; set; }  // ссылка к аниматору добычи
 
-    public CLS_mining_scene(string _name, CLS_resource[]  _typs_mining)
+    public CLS_mining_scene(string _name, Dictionary<int, CLS_resource> _typs_mining)
     {
         typs_mining          = _typs_mining;
         GO_Canvas_typ_mining = GameObject.Find("/Canvas").transform.Find("mining_scene/" + _name).gameObject;
