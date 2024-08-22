@@ -11,7 +11,6 @@ public class WAREHOUSE_INIT : WAREHOUSE
         warehouses_typs = new Dictionary<string, CLS_warehouse>()
         {
             ["MONEY"]       = new CLS_warehouse("MONEY",      "coin"),
-            ["GOLD"]        = new CLS_warehouse("GOLD",       "coin"),
 
             ["BLACK"]       = new CLS_warehouse("BLACK",      "mining"),
             ["TREE"]        = new CLS_warehouse("TREE",       "mining"),
@@ -19,7 +18,8 @@ public class WAREHOUSE_INIT : WAREHOUSE
             ["GLASS"]       = new CLS_warehouse("GLASS",      "mining"),
             ["RED"]         = new CLS_warehouse("RED",        "mining"),
             ["YELLOW"]      = new CLS_warehouse("YELLOW",     "mining"),
-            ["PETROLEUM"]   = new CLS_warehouse("PETROLEUM",  "mining"),
+
+            ["PETROLEUM"]   = new CLS_warehouse("PETROLEUM",  "product"),
         };
 
 
@@ -27,7 +27,7 @@ public class WAREHOUSE_INIT : WAREHOUSE
         SAVE_WAREHOUSE.GET();
 
 
-        Transform WAREHOUSE_scroll = GameObject.Find("Canvas").transform.Find("menu/WAREHOUSE/WINDOW/Viewport/Content");
+        Transform WAREHOUSE_scroll = GameObject.Find("Canvas").transform.Find("menu/WAREHOUSE/catalog/Viewport/Content");
         foreach (KeyValuePair<string, CLS_warehouse> wrh in warehouses_typs)
         {
             // если есть продукт на складе то добавить слот на сцену

@@ -14,7 +14,7 @@ public class BUTTON_MENU : BUTTONS
     //-----------------------------------------------------------------------------------------------------------------
     public void WAREHOUSES_Open()
     {
-        sale.SetActive(true);
+        warehouse.SetActive(true);
 
         WAREHOUSE_UPDATE_Values.O();
     }

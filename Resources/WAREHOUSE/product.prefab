@@ -249,7 +249,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8310742869729193614}
           m_TargetAssemblyTypeName: BUTTON_WAREHOUSES, Assembly-CSharp
-          m_MethodName: Select_product
+          m_MethodName: SELECT_PRODUCT
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 7211541145940860764}
